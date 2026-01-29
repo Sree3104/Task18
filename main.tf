@@ -25,6 +25,9 @@ resource "random_id" "suffix" {
 resource "aws_s3_bucket" "gitops_demo" {
 
   bucket = "gitops-demo-${random_id.suffix.hex}"
+  tags={
+   ManagedBy="gitops"
+}
 
 }
 
